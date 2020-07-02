@@ -89,5 +89,10 @@
     "*.{html,json,md,yml}": "prettier --write",
     "*.js": "eslint --fix",
     "*.hbs": "ember-template-lint"
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "prettier --write CHANGELOG.md"
+    }
   }
 }
