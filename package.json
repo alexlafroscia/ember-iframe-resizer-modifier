@@ -94,5 +94,9 @@
     "scripts": {
       "postchangelog": "prettier --write CHANGELOG.md"
     }
+  },
+  "volta": {
+    "node": "12.18.2",
+    "yarn": "1.22.4"
   }
 }
