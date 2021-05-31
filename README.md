@@ -21,10 +21,7 @@ This addon provides a modifier that can be used to ensure that an `iframe` in yo
 In your template, you can use `iframe-resizer` on an `iframe` element like so:
 
 ```handlebars
-<iframe
-  src="/my-iframe.html"
-  {{iframe-resizer log=true}}
-/>
+<iframe src="/my-iframe.html" {{iframe-resizer log=true}}></iframe>
 ```
 
 Any options that are supported by the `iframeResizer` function can be passed as named arguments to the modifier. Any positional arguments to the modifier are treated as additional objects containing options for the `iframeResizer` function; all of these potential options are merged together before passing them to `iframeResizer`.
