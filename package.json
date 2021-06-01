@@ -15,7 +15,6 @@
   "scripts": {
     "build": "ember build --environment=production",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
-    "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "npm-run-all lint:* test:*",
@@ -31,7 +30,6 @@
     "broccoli-merge-trees": "^4.2.0",
     "ember-auto-import": "^1.5.3",
     "ember-cli-babel": "^7.20.5",
-    "ember-cli-htmlbars": "^5.1.2",
     "ember-modifier": "^2.1.0",
     "iframe-resizer": "^4.2.11"
   },
@@ -45,6 +43,7 @@
     "broccoli-asset-rev": "^3.0.0",
     "ember-cli": "~3.26.0",
     "ember-cli-dependency-checker": "^3.2.0",
+    "ember-cli-htmlbars": "^5.1.2",
     "ember-cli-inject-live-reload": "^2.0.2",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-uglify": "^3.0.0",
@@ -56,8 +55,6 @@
     "ember-resolver": "^8.0.0",
     "ember-source": "~3.27.0",
     "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^2.8.0",
-    "ember-template-lint-plugin-prettier": "^2.0.0",
     "ember-try": "^1.4.0",
     "eslint": "^7.1.0",
     "eslint-config-prettier": "^8.0.0",
@@ -85,8 +82,7 @@
   },
   "lint-staged": {
     "*.{json,md,yml}": "prettier --write",
-    "*.js": "eslint --fix",
-    "*.hbs": "ember-template-lint"
+    "*.js": "eslint --fix"
   },
   "standard-version": {
     "scripts": {
