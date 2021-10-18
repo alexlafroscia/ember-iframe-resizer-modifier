@@ -14,6 +14,8 @@ Ember modifier for [`iframe-resizer`](https://github.com/davidjbradshaw/iframe-r
 ember install ember-iframe-resizer-modifier
 ```
 
+Note: you application must have a dependency on `ember-auto-import` v2 in order to use this addon as well.
+
 ## Usage
 
 This addon provides a modifier that can be used to ensure that an `iframe` in your Ember app is always resized to match the contents of the `iframe`.
