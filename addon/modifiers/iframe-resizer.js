@@ -1,23 +1,32 @@
 import Modifier from "ember-modifier";
+import { registerDestructor } from "@ember/destroyable";
 import iframeResizer from "iframe-resizer/js/iframeResizer";
 
 export default class IframeResizerModifier extends Modifier {
-  get iframeResizerOptions() {
-    const allPositionalArgs = this.args.positional.reduce((acc, current) => {
+  element;
+
+  constructor() {
+    super(...arguments);
+
+    registerDestructor(this, () =>
+      this.element.iFrameResizer.removeListeners()
+    );
+  }
+
+  iframeResizerOptions(positional, named) {
+    const allPositionalArgs = positional.reduce((acc, current) => {
       return {
         ...acc,
         ...current,
       };
     }, {});
 
-    return { ...allPositionalArgs, ...this.args.named };
+    return { ...allPositionalArgs, ...named };
   }
 
-  didReceiveArguments() {
-    iframeResizer(this.iframeResizerOptions, this.element);
-  }
+  modify(element, positional, named) {
+    this.element = element;
 
-  willRemove() {
-    this.element.iFrameResizer.removeListeners();
+    iframeResizer(this.iframeResizerOptions(positional, named), element);
   }
 }
